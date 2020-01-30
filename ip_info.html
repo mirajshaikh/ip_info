@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="cont">
+        <h1 class="center">IP Location Info</h1>
+        <p id="ip" class="text"></p>
+        <span>
+          <h4 id="country" class="text"></h4>
+          <img id="countryImg" src="" alt="" />
+        </span>
+        <h4 id="city" class="text"></h4>
+        <h4 id="currency" class="text"></h4>
+        <h4 id="currencyCode" class="text"></h4>
+        <h4 id="currencySym" class="text"></h4>
+       <!-- <input type="text" name="" id="data" value=" 1 "> -->
+       <div id="wait"> <img src="ajax-loader (1).gif" alt=""> </div>
+        <div id="buttonDiv">
+          <button id="getInfo" class="infobtn" > Get Your Info</button>
+          <button id="getInfo2" class="infobtn2" type="button" >Get Someone's else Info</button>
+        </div>
+        <div id="secound-countainer">
+        <div class="flex">
+        <input id="ipaddress" class="inputbox" placeholder="Enter The IP Address You Wanna know"> </div>
+        <div class="flex1"> <button id="back" class="getip"> Back  </button> <button id="getip" class="getip"> Get IP Info </button>
+      </div>
+    </div>
+    <div class="flex" id="home" style="padding-top: 35px;"> <a href="https://ip-info.netlify.com"> <button class="getip"> Home </button> </a> </div>
+</div>
+      <a href="https://github.com/mirajshaikh/" target="_blank"><div class="card" > <img src="https://github.com/mirajshaikh/IP-info/blob/master/github-512.png?raw=true" width="30px"><br> <p> Github </p>  </div>
+    </div></a>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
