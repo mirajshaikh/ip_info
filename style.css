@@ -163,3 +163,42 @@
     margin: 40px 0pc;
   }
   
+@media only screen and (max-width: 480px){
+
+  h1{
+font-size: 35px;
+  }
+  #buttonDiv{
+    display: block;
+    justify-content: center;
+  }
+  .infobtn{
+    display: block;
+    padding: 10px 52px;
+    margin: auto;
+  }
+  .infobtn2{
+    display: block;
+    padding: 10px 10px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .flex1{
+    display: block;
+  }
+
+  .getip{
+    display: block;
+    padding: 10px 10px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  #back{
+    display: block;
+    padding: 10px 30px;
+    margin: auto;
+    margin-top: 20px;
+  }
+}
