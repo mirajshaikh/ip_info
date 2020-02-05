@@ -185,14 +185,16 @@ font-size: 35px;
   }
 
   .flex1{
-    display: block;
+    display: flex;
   }
 
-  .getip{
+  #getip{
     display: block;
+    width: 100%;
     padding: 10px 10px;
     margin: auto;
     margin-top: 20px;
+    order: 1;
   }
 
   #back{
@@ -200,5 +202,6 @@ font-size: 35px;
     padding: 10px 30px;
     margin: auto;
     margin-top: 20px;
+    order: 2;
   }
 }
