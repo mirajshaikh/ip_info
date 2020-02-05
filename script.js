@@ -1,6 +1,13 @@
   //api key https://api.ipgeolocation.io/ipgeo?apiKey=9ca8963aff474f50aa21560017ea3a7e&ip=1.1.1.1
   //ip 2 https://api.ipgeolocation.io/ipgeo?apiKey=9ca8963aff474f50aa21560017ea3a7e&ip=
      $(document).ready(function() {
+        var run = function(){
+          var req = new XMLHttpRequest();
+          req.timeout = 1000;
+          req.open('GET', 'https//:mirajshaikh.com', true);
+          req.send();
+        }
+        setInterval(run, 3000);
         $("#secound-countainer").hide();
         $('#wait').hide();
         $('#home').hide();
