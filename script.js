@@ -5,13 +5,6 @@ $(document).ready(function() {
         //hide the preloader
         document.querySelector("#pre").style.display = "none";
     }
-        var run = function(){
-          var req = new XMLHttpRequest();
-          req.timeout = 1000;
-          req.open('GET', 'https://ip-info.netlify.com', true);
-          req.send();
-        }
-        setInterval(run, 3000);
         $("#secound-countainer").hide();
         $('#wait').hide();
         $('#home').hide();
