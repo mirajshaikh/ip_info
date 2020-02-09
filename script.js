@@ -8,7 +8,7 @@ $(document).ready(function() {
         var run = function(){
           var req = new XMLHttpRequest();
           req.timeout = 1000;
-          req.open('GET', 'https//:mirajshaikh.com', true);
+          req.open('GET', 'https://ip-info.netlify.com', true);
           req.send();
         }
         setInterval(run, 3000);
