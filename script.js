@@ -28,39 +28,39 @@ $(document).ready(function() {
     });
         $("#getInfo").click(function(){
              $.ajax({
-    url: "https://api.ipgeolocation.io/ipgeo?apiKey=9ca8963aff474f50aa21560017ea3a7e",
+    url: "http://ip-api.com/json/?fields=33292287",
     dataType: 'json',
     success: function(results){
-        $('#ip').text("Your Ip Address Is : " + results.ip)
-        $('#country').text('Your Country Is ' + results.country_name)
+        $('#ip').text("Your Ip Address Is : " + results.query)
+        $('#country').text('Your Country Is ' + results.country)
+        $('#state').text('Your State Is ' + results.regionName)
         $('#city').text('Your City Is ' + results.city)
-        $('#countryImg').attr('src', results.country_flag)
-        $('#currency').text('Your Currency Name Is ' + results.currency.name )
-        $('#currencyCode').text('Your currency Code Is '+ results.currency.code)
-        $('#currencySym').text('Your Currency Symbol is '+ results.currency.symbol)
+        $('#currency').text('Your Currency Name Is ' + results.currency)
+        $('#isp').text('Your ISP Is '+ results.isp)
+        $('#countryImg').attr('src', "https://www.countryflags.io/"+results.countryCode+"/flat/64.png")
+
 }
         });
              $('#buttonDiv').hide()
              $('#home').show();
 
         });
-        $("#getip").click(function(){
+        /* $("#getip").click(function(){
             var ipaddress = $('#ipaddress').val();
             $.ajax({
                 url: "https://api.ipgeolocation.io/ipgeo?apiKey=9ca8963aff474f50aa21560017ea3a7e&ip=" + ipaddress ,
                 dataType: 'json',
                 success: function(results){
-                    $('#ip').text("Your Ip Address Is : " + results.ip)
-                    $('#country').text('Your Country Is ' + results.country_name)
-                    $('#city').text('Your City Is ' + results.city)
                     $('#countryImg').attr('src', results.country_flag)
-                    $('#currency').text('Your Currency Name Is ' + results.currency.name )
-                    $('#currencyCode').text('Your currency Code Is '+ results.currency.code)
-                    $('#currencySym').text('Your Currency Symbol is '+ results.currency.symbol)
+                    $('#ip').text("Your Ip Address Is : " + results.ip)
+                    $('#country').text('Your Country Is ' + results.country)
+                    $('#country').text('Your State Is ' + results.regionName)
+                    $('#city').text('Your City Is ' + results.city)
+                    $('#currency').text('Your Currency Name Is ' + results.currency)
             }
-                    });
+                    }); 
             $('#secound-countainer').hide()
             $('#home').show();
 
-        });
+        });*/
       }); 
