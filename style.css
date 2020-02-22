@@ -21,9 +21,9 @@
     }
     
     #logo path{
-        stroke-dasharray: 900px;
-        stroke-dashoffset: 1000px;
-        animation: line-anim 5s ease forwards;
+        stroke-dasharray: 800px;
+        stroke-dashoffset: 800px;
+        animation: line-anim 3s ease forwards infinite;
     }
     
     @keyframes line-anim{
