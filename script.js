@@ -28,7 +28,7 @@ $(document).ready(function() {
     });
         $("#getInfo").click(function(){
              $.ajax({
-    url: "http://ip-api.com/json/?fields=33292287",
+    url: "http://ip-api.com/json/?fields=33292287", 
     dataType: 'json',
     success: function(results){
         $('#ip').text("Your Ip Address Is : " + results.query)
