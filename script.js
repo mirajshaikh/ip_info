@@ -44,22 +44,23 @@ $(document).ready(function() {
              $('#home').show();
 
         });
-        /* $("#getip").click(function(){
+        $("#getip").click(function(){
             var ipaddress = $('#ipaddress').val();
             $.ajax({
-                url: "https://api.ipgeolocation.io/ipgeo?apiKey=9ca8963aff474f50aa21560017ea3a7e&ip=" + ipaddress ,
+                url: "https://www.iplocate.io/api/lookup/" + ipaddress ,
                 dataType: 'json',
                 success: function(results){
-                    $('#countryImg').attr('src', results.country_flag)
-                    $('#ip').text("Your Ip Address Is : " + results.ip)
-                    $('#country').text('Your Country Is ' + results.country)
-                    $('#country').text('Your State Is ' + results.regionName)
-                    $('#city').text('Your City Is ' + results.city)
-                    $('#currency').text('Your Currency Name Is ' + results.currency)
-            }
+                $('#ip').text("Your Ip Address Is : " + results.ip)
+                $('#country').text('Your Country Is ' + results.country)
+                $('#state').text('Your State Is ' + results.subdivision)
+                $('#city').text('Your City Is ' + results.city)
+                $('#isp').text('Your ISP Is '+ results.org)
+                $('#countryImg').attr('src', "https://www.countryflags.io/"+results.country_code+"/flat/64.png")
+
+}
                     }); 
             $('#secound-countainer').hide()
             $('#home').show();
 
-        });*/
+        });
       }); 
