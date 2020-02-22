@@ -28,16 +28,15 @@ $(document).ready(function() {
     });
         $("#getInfo").click(function(){
              $.ajax({
-    url: "http://ip-api.com/json/?fields=33292287", 
+    url: "https://www.iplocate.io/api/lookup/",
     dataType: 'json',
     success: function(results){
-        $('#ip').text("Your Ip Address Is : " + results.query)
+        $('#ip').text("Your Ip Address Is : " + results.ip)
         $('#country').text('Your Country Is ' + results.country)
-        $('#state').text('Your State Is ' + results.regionName)
+        $('#state').text('Your State Is ' + results.subdivision)
         $('#city').text('Your City Is ' + results.city)
-        $('#currency').text('Your Currency Name Is ' + results.currency)
-        $('#isp').text('Your ISP Is '+ results.isp)
-        $('#countryImg').attr('src', "https://www.countryflags.io/"+results.countryCode+"/flat/64.png")
+        $('#isp').text('Your ISP Is '+ results.org)
+        $('#countryImg').attr('src', "https://www.countryflags.io/"+results.country_code+"/flat/64.png")
 
 }
         });

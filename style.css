@@ -3,6 +3,8 @@
         margin: 0;
         font-family: 'Montserrat', sans-serif;
       }
+      body{
+      }
 
       #pre{
         width: 100%;
@@ -38,6 +40,9 @@
         min-height: 100vh;
         height: auto;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       h1 {
         font-size: 45px;
