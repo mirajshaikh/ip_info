@@ -53,9 +53,14 @@ $(document).ready(function() {
 
         });
         $("#getip").click(function(){
-            var ipaddress = $('#ipaddress').val();
+            var ipaddre = ipInput.getIp();
+            console.log(ipaddre);
+            if($(ipaddre) == 'undefined'){ 
+                alert('Input can not be left blank');
+             }
+             else{
             $.ajax({
-                url: "https://www.iplocate.io/api/lookup/" + ipInput.getIp(),
+                url: "https://www.iplocate.io/api/lookup/" +ipaddre ,
                 dataType: 'json',
                 success: function(results){
                 $('#ipadd').text("The Ip Address Is : " + results.ip)
@@ -71,7 +76,7 @@ $(document).ready(function() {
             $('#secound-countainer').hide()
             $('#home').show();
             
-
+                }
         });
         $("#home").click(function(){
             $("#info").hide();
