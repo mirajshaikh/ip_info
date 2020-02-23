@@ -11,11 +11,15 @@ $(document).ready(function() {
 
 
         $(document).on({
-            ajaxStart: function(){ 
+            ajaxStart: function(){
+                $("#info").hide();
                 $('#wait').show();
+
             },
-             ajaxStop: function(){ 
-                $('#wait').hide(); }    
+             ajaxStop: function(){
+                $("#info").show();
+                $('#wait').hide();
+            }    
         });
        
         $("#getInfo2").click(function(){
@@ -38,10 +42,12 @@ $(document).ready(function() {
         $('#isp').text('Your ISP Is '+ results.org)
         $('#countryImg').attr('src', "https://www.countryflags.io/"+results.country_code+"/flat/64.png")
 
-}
+            }
         });
              $('#buttonDiv').hide()
              $('#home').show();
+             $("#info").hide();
+
 
         });
         $("#getip").click(function(){
@@ -59,8 +65,15 @@ $(document).ready(function() {
 
 }
                     }); 
+            $("#info").hide();
             $('#secound-countainer').hide()
             $('#home').show();
+            
 
+        });
+        $("#home").click(function(){
+            $("#info").hide();
+            $("#buttonDiv").show();
+            $("#home").hide();
         });
       }); 
