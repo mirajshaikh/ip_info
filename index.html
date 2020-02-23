@@ -8,7 +8,6 @@
   <link rel="stylesheet" type="text/css" href="src/css/style.css">
   <link rel="stylesheet" href="src/css/offline-theme-chrome.css" />
   <link rel="stylesheet" href="src/css/offline-language-english.css" />
-  <link rel="stylesheet" href="src/css/ipInput.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="src/js/offline.min.js"></script> <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -19,6 +18,28 @@
     gtag('js', new Date());
 
     gtag('config', 'UA-156352671-2');
+  </script>
+  <script>
+                function myFunction(){
+           var ipaddre = ($("#ipaddress").val())
+            $.ajax({
+                url: "https://www.iplocate.io/api/lookup/" +ipaddre ,
+                dataType: 'json',
+                success: function(results){
+                $('#ipadd').text("The Ip Address Is : " + results.ip)
+                $('#country').text('The Country Is ' + results.country)
+                $('#state').text('The State Is ' + results.subdivision)
+                $('#city').text('The City Is ' + results.city)
+                $('#isp').text('The ISP Is '+ results.org)
+                $('#countryImg').attr('src', "https://www.countryflags.io/"+results.country_code+"/flat/64.png")
+
+}
+                    });
+            $("#info").hide();
+            $('#secound-countainer').hide()
+            $('#home').show();
+            
+                };
   </script>
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta property="og:title" content="IP Locator - Check Yours IP Location or Someone else" />
@@ -41,14 +62,23 @@
     <div class="cont">
       <h1 class="center">IP Location Info</h1>
       <div id="info">
-          <img id="countryImg" src="" alt="" />
-          <p id="ipadd" class="text"></p>
-          <h4 id="isp" class="text"></h4>
-          <h4 id="country" class="text"></h4>
-          <h4 id="state" class="text"></h4>
-          <h4 id="city" class="text"></h4>
-          <h4 id="currency" class="text"></h4>
-    </div>
+        <img id="countryImg" src="" alt="" />
+        <p id="ipadd" class="text"></p>
+        <h4 id="isp" class="text"></h4>
+        <h4 id="country" class="text"></h4>
+        <h4 id="state" class="text"></h4>
+        <h4 id="city" class="text"></h4>
+        <h4 id="currency" class="text"></h4>
+  </div>
+  <div id="omit">
+    <img id="omit" src="" alt="" />
+    <p id="omit1" class="text"></p>
+    <h4 id="omit" class="text"></h4>
+    <h4 id="omi3" class="text"></h4>
+    <h4 id="mogf5" class="text"></h4>
+    <h4 id="sgf" class="text"></h4>
+    <h4 id="dgg" class="text"></h4>
+</div>
       <!-- <input type="text" name="" id="data" value=" 1 "> -->
       <div id="wait"> <img src="src/img/loader.gif" alt=""> </div>
       <div id="buttonsdiv">
@@ -57,25 +87,21 @@
               <button id="getInfo2" class="infobtn2" type="button">Get Someone's else Info</button>
             </div>
             <div id="secound-countainer">
-              <form>
-              <div id="ip">
-                <div class="ip-input-container">
-                  <input type="text" pattern="\d*" inputmode="numeric" class="ip-input-item" value="">
-                  <i class="ip-input-dot"></i>
-                  <input type="text" pattern="\d*" inputmode="numeric" class="ip-input-item" value="">
-                  <i class="ip-input-dot"></i>
-                  <input type="text" pattern="\d*" inputmode="numeric" class="ip-input-item" value="">
-                  <i class="ip-input-dot"></i>
-                  <input type="text" pattern="\d*" inputmode="numeric" class="ip-input-item" value="">
-                </div>
-              </div>
-            </form>
               <div class="flex">
+              <form action="javascript:void(0);" onsubmit="myFunction()">
+              <input id="ipaddress" type="tel" class="inputbox" placeholder="Enter The IP Address You Wanna know" minlength="7" maxlength="15" size="15" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required="">
+              <div class="flex1"> <a href="index.html"><button class="getip"> Back </button> </a><button id="getip" type="submit" class="getip"> Get IP
+                Info </button>
+            </div>
+          </div>
+            </form>
+            </div>
+              <!-- <div class="flex"> -->
                 <!-- <input id="ipaddress" class="inputbox" placeholder="Enter The IP Address You Wanna know"> </div> -->
-              <div class="flex1"> <button id="back" class="getip"> Back </button> <button id="getip" class="getip"> Get IP
+              <!-- <div class="flex1"> <button id="back" class="getip"> Back </button> <button id="getip" class="getip"> Get IP
                   Info </button>
               </div>
-            </div>
+            </div> -->
     </div>
       <div class="flex" id="home" style="padding-top: 10px;"><button class="getip"> Home </button></div>
     </div>
@@ -87,7 +113,6 @@
   </div></a>
 
   <script type="text/javascript" defer src="src/js/script.js"></script>
-  <script defer src="src/js/ipInput.min.js"></script>
 </body>
 
 </html>

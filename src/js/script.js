@@ -8,9 +8,7 @@ $(document).ready(function() {
         $("#secound-countainer").hide();
         $('#wait').hide();
         $('#home').hide();
-        var ipInput = $('#ip').ipInput();
-        $(document).find('input[type=text]').attr('type', 'tel');
-
+        $("#omit").hide();
 
         $(document).on({
             ajaxStart: function(){
@@ -21,6 +19,9 @@ $(document).ready(function() {
              ajaxStop: function(){
                 $("#info").show();
                 $('#wait').hide();
+                $("#omit").hide();
+                $('#buttonDiv').hide()
+
             }    
         });
        
@@ -52,36 +53,32 @@ $(document).ready(function() {
 
 
         });
-        $("#getip").click(function(){
-            var ipaddre = ipInput.getIp();
-            console.log(ipaddre);
-            if($(ipaddre) == 'undefined'){ 
-                alert('Input can not be left blank');
-             }
-             else{
-            $.ajax({
-                url: "https://www.iplocate.io/api/lookup/" +ipaddre ,
-                dataType: 'json',
-                success: function(results){
-                $('#ipadd').text("The Ip Address Is : " + results.ip)
-                $('#country').text('The Country Is ' + results.country)
-                $('#state').text('The State Is ' + results.subdivision)
-                $('#city').text('The City Is ' + results.city)
-                $('#isp').text('The ISP Is '+ results.org)
-                $('#countryImg').attr('src', "https://www.countryflags.io/"+results.country_code+"/flat/64.png")
+        // $("#getip").click(
+//             function myFunction(){
+//            var ipaddre = ($("#ipaddress").val())
+//             $.ajax({
+//                 url: "https://www.iplocate.io/api/lookup/" +ipaddre ,
+//                 dataType: 'json',
+//                 success: function(results){
+//                 $('#ipadd').text("The Ip Address Is : " + results.ip)
+//                 $('#country').text('The Country Is ' + results.country)
+//                 $('#state').text('The State Is ' + results.subdivision)
+//                 $('#city').text('The City Is ' + results.city)
+//                 $('#isp').text('The ISP Is '+ results.org)
+//                 $('#countryImg').attr('src', "https://www.countryflags.io/"+results.country_code+"/flat/64.png")
 
-}
-                    }); 
-            $("#info").hide();
-            $('#secound-countainer').hide()
-            $('#home').show();
+// }
+//                     });
+//             $("#info").hide();
+//             $('#secound-countainer').hide()
+//             $('#home').show();
             
-                }
-        });
+//                 };
         $("#home").click(function(){
             $("#info").hide();
             $("#buttonDiv").show();
             $("#home").hide();
+            $("#omit").show();
         });
       }); 
 
