@@ -9,6 +9,7 @@ $(document).ready(function() {
         $('#wait').hide();
         $('#home').hide();
         var ipInput = $('#ip').ipInput();
+        $(document).find('input[type=text]').attr('type', 'tel');
 
 
         $(document).on({
