@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/jpg" href="favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="offline-theme-chrome.css" />
-  <link rel="stylesheet" href="offline-language-english.css" />
+  <link rel="shortcut icon" type="image/jpg" href="src/img/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/offline-theme-chrome.css" />
+  <link rel="stylesheet" href="src/css/offline-language-english.css" />
+  <link rel="stylesheet" href="src/css/ipInput.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="offline.min.js"></script> <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="src/js/offline.min.js"></script> <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156352671-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -41,7 +42,7 @@
       <h1 class="center">IP Location Info</h1>
       <div id="info">
           <img id="countryImg" src="" alt="" />
-          <p id="ip" class="text"></p>
+          <p id="ipadd" class="text"></p>
           <h4 id="isp" class="text"></h4>
           <h4 id="country" class="text"></h4>
           <h4 id="state" class="text"></h4>
@@ -49,15 +50,26 @@
           <h4 id="currency" class="text"></h4>
     </div>
       <!-- <input type="text" name="" id="data" value=" 1 "> -->
-      <div id="wait"> <img src="ajax-loader (1).gif" alt=""> </div>
+      <div id="wait"> <img src="src/img/loader.gif" alt=""> </div>
       <div id="buttonsdiv">
             <div id="buttonDiv">
               <button id="getInfo" class="infobtn"> Get Your Info</button>
               <button id="getInfo2" class="infobtn2" type="button">Get Someone's else Info</button>
             </div>
             <div id="secound-countainer">
+              <div id="ip">
+                <div class="ip-input-container">
+                  <input type="text" class="ip-input-item" value="">
+                  <i class="ip-input-dot"></i>
+                  <input type="text" class="ip-input-item" value="">
+                  <i class="ip-input-dot"></i>
+                  <input type="text" class="ip-input-item" value="">
+                  <i class="ip-input-dot"></i>
+                  <input type="text" class="ip-input-item" value="">
+                </div>
+              </div>
               <div class="flex">
-                <input id="ipaddress" class="inputbox" placeholder="Enter The IP Address You Wanna know"> </div>
+                <!-- <input id="ipaddress" class="inputbox" placeholder="Enter The IP Address You Wanna know"> </div> -->
               <div class="flex1"> <button id="back" class="getip"> Back </button> <button id="getip" class="getip"> Get IP
                   Info </button>
               </div>
@@ -72,7 +84,8 @@
       </div>
   </div></a>
 
-  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" defer src="src/js/script.js"></script>
+  <script defer src="src/js/ipInput.min.js"></script>
 </body>
 
 </html>

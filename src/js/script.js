@@ -8,6 +8,7 @@ $(document).ready(function() {
         $("#secound-countainer").hide();
         $('#wait').hide();
         $('#home').hide();
+        var ipInput = $('#ip').ipInput();
 
 
         $(document).on({
@@ -35,7 +36,7 @@ $(document).ready(function() {
     url: "https://www.iplocate.io/api/lookup/",
     dataType: 'json',
     success: function(results){
-        $('#ip').text("Your Ip Address Is : " + results.ip)
+        $('#ipadd').text("Your Ip Address Is : " + results.ip)
         $('#country').text('Your Country Is ' + results.country)
         $('#state').text('Your State Is ' + results.subdivision)
         $('#city').text('Your City Is ' + results.city)
@@ -53,10 +54,10 @@ $(document).ready(function() {
         $("#getip").click(function(){
             var ipaddress = $('#ipaddress').val();
             $.ajax({
-                url: "https://www.iplocate.io/api/lookup/" + ipaddress ,
+                url: "https://www.iplocate.io/api/lookup/" + ipInput.getIp(),
                 dataType: 'json',
                 success: function(results){
-                $('#ip').text("The Ip Address Is : " + results.ip)
+                $('#ipadd').text("The Ip Address Is : " + results.ip)
                 $('#country').text('The Country Is ' + results.country)
                 $('#state').text('The State Is ' + results.subdivision)
                 $('#city').text('The City Is ' + results.city)
@@ -77,3 +78,5 @@ $(document).ready(function() {
             $("#home").hide();
         });
       }); 
+
+      

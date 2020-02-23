@@ -53,7 +53,7 @@
         font-size: large;
       }
       .center {
-        padding: 50px 0px 20px 0px;
+        padding: 0px 0px 30px 0px;
         display: flex;
         justify-content: center;
       }
@@ -103,6 +103,7 @@
       #buttonDiv{
         display: flex;
         justify-content: center;
+        margin-top: 60px;
       }
 
       .text{
@@ -151,10 +152,11 @@
   display: flex;
   justify-content: center;
 }
+
 .flex1{
   display: flex;
   justify-content: center;
-  padding-bottom: 100px;;
+  /* padding-bottom: 100px;; */
 }
 
 .getip{
@@ -214,6 +216,7 @@ font-size: 35px;
   #buttonDiv{
     display: block;
     justify-content: center;
+    margin-top: 10px;
   }
   .infobtn{
     display: block;
@@ -233,11 +236,10 @@ font-size: 35px;
 
   #getip{
     display: block;
-    width: 50%;
+    width: auto;
     padding: 10px 10px;
-    margin: auto;
     margin-top: 20px;
-    order: 1;
+    order: 2;
   }
 
   #back{
@@ -245,6 +247,6 @@ font-size: 35px;
     padding: 10px 30px;
     margin: auto;
     margin-top: 20px;
-    order: 2;
+    order: 1;
   }
 }
