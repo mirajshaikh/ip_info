@@ -255,7 +255,7 @@ font-size: 35px;
   }
 }
 
-@media only screen and (max-height: 800px){
+@media only screen and (max-height: 600px) and (max-width: 480px){
   .card{
     display: none;
   }
