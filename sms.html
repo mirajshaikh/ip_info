@@ -71,38 +71,18 @@ font-family: 30px;
 $("#submit").click(function(){
     var number = $("#phone").val();
     console.log(number)
-var settings = {
+    var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://www.fast2sms.com/dev/bulk",
-  "method": "POST",
-  "headers": {
-    "authorization": "RG0Ok51QtHBXC6iW2xwb9hLrngY84qajKDdUloIu3NZvVMsFcEFeT0UtszgqSEBAx8baYQJm5RM123vl",
-  },
-  "data": {
-    "sender_id": "FSTSMS",
-    "message": "This is a test message",
-    "language": "english",
-    "route": "t",
-    "numbers": number,
-  }
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-});
-
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://www.fast2sms.com/dev/bulk?authorization=RG0Ok51QtHBXC6iW2xwb9hLrngY84qajKDdUloIu3NZvVMsFcEFeT0UtszgqSEBAx8baYQJm5RM123vl&sender_id=FSTSMS&message=This is test message&language=english&route=p&numbers=9769643826",
+  "url": "https://www.fast2sms.com/dev/bulk?authorization=RG0Ok51QtHBXC6iW2xwb9hLrngY84qajKDdUloIu3NZvVMsFcEFeT0UtszgqSEBAx8baYQJm5RM123vl&sender_id=FSTSMS&message=This is test message&language=english&route=p&numbers="+number,
   "method": "GET"
 }
 
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
+});
+
   </script>
 </body>
 </html>
