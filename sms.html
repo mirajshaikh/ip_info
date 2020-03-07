@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://jquery-cdn.netlify.com/jquery-3.4.1.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
 body{
@@ -48,6 +51,12 @@ height: 40px;
 width: 100px;
 font-family: 30px;
 }
+.message textarea{
+    height: 125px;
+    width: 350px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
 
     </style>
@@ -62,7 +71,8 @@ font-family: 30px;
       <option value="OTHERS">OTHERS</option>
     </select></div>
     <div class="number"><input id="phone" type="number" value="" min="777777777" placeholder="Enter phone number to send"></div>
-<div class="btn"><button id="submit"> Send </button></div>
+    <div class="message"><textarea id="message" type="text" placeholder="Message" ></textarea> </div>
+    <div class="btn"><button id="submit"> Send </button></div>
 </div>
 
 
@@ -70,11 +80,14 @@ font-family: 30px;
     <script>
 $("#submit").click(function(){
     var number = $("#phone").val();
+    var text =$("#message").val();
+var encodedMessage = encodeURIComponent(text);
+console.log(encodedMessage)
     console.log(number)
     var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://www.fast2sms.com/dev/bulk?authorization=RG0Ok51QtHBXC6iW2xwb9hLrngY84qajKDdUloIu3NZvVMsFcEFeT0UtszgqSEBAx8baYQJm5RM123vl&sender_id=FSTSMS&message=This is test message&language=english&route=p&numbers="+number,
+  "url": "https://www.fast2sms.com/dev/bulk?authorization=RG0Ok51QtHBXC6iW2xwb9hLrngY84qajKDdUloIu3NZvVMsFcEFeT0UtszgqSEBAx8baYQJm5RM123vl&sender_id=FSTSMS&message="+encodedMessage+"&language=english&route=p&numbers="+number,
   "method": "GET"
 }
 
@@ -86,3 +99,4 @@ $.ajax(settings).done(function (response) {
   </script>
 </body>
 </html>
+
