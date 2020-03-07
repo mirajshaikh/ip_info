@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://jquery-cdn.netlify.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <label for="cars">Choose Sender Id:</label>
+
+    <select id="cars">
+      <option value="MIRAJ">Volvo</option>
+      <option value="SURAJ">Saab</option>
+      <option value="OTHERS">Opel</option>
+    </select>
+    <input id="phone" type="number" value="" min="777777777" placeholder="enter phone number to send" >
+<button id="submit"> Send </button>
+
+    <script>
+
+
+
+$("#submit").click(function(){
+    var number = $("#phone").val();
+    console.log(number)
+ var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://www.fast2sms.com/dev/bulk",
+  "method": "POST",
+  "headers": {
+    "authorization": "RG0Ok51QtHBXC6iW2xwb9hLrngY84qajKDdUloIu3NZvVMsFcEFeT0UtszgqSEBAx8baYQJm5RM123vl",
+  },
+  "data": {
+    "sender_id": "FSTSMS",
+    "message": "This is a test message",
+    "language": "english",
+    "route": "t",
+    "numbers": number,
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+});
+  </script>
+</body>
+</html>
