@@ -63,7 +63,7 @@ font-family: 30px;
     </style>
 </head>
 <body>
-
+ <h1 id="mess" style="color: white; font-family: Arial, Helvetica, sans-serif; padding-top: 40vh; font-size: 35px; text-align: center;"> Message Has Send </h1>
     <div class="grid">
         <h1 style="color: white; font-family: Arial, Helvetica, sans-serif; font-size: 35px;">WHATSAPP</h1>
     <div class="drop"> <label for="cars">Choose Sender No.:</label>
@@ -80,13 +80,15 @@ font-family: 30px;
 
 
 <script>
+    $("#mess").hide();
 $("#submit").click(function(){
 var text =$("#message").val();
 var encodedMessage = encodeURIComponent(text);
 console.log(encodedMessage)
     var number = $("#phone").val();
-    console.log(number)
-    $.post('https://eu2.chat-api.com/instance105250/sendMessage?token=qjv0l2cflsuk3ki2', {"phone": "91"+number, "body": text});
+    var number = $("#phone").val();
+    var text =$("#message").val();
+   // $.post('https://eu2.chat-api.com/instance105250/sendMessage?token=qjv0l2cflsuk3ki2', {"phone": "91"+number, "body": text});
     
 });
 
